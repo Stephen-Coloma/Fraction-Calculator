@@ -26,5 +26,16 @@ public class MixedFraction extends Fraction {
         super(fraction.getNumerator(), fraction.getDenominator());
         this.whole = 0;
     }
+    //This part is edited by EMMANUEL BROMEO, on March 9, 2023
+    /** this methods sets the whole number part of the mixed fraction */
+    public void setWholePart(int whole){
+        this.whole = whole;
+    }
+    /** this method sets the fraction part of the mixed fraction */
+    public void setFractionPart(Fraction fraction){
+        super.setNumerator(fraction.getNumerator());
+        super.setDenominator(fraction.getDenominator());
+
+    }
 
 }
