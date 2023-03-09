@@ -86,6 +86,38 @@ public class MixedFraction extends Fraction {
         MixedFraction ans = new MixedFraction(wholeNumSum, answer.getNumerator(), answer.getDenominator());
         return ans;
     }
+    //This part is edited by JERWIN RAMOS, on March 9, 2023
+    /**This method Subtracts Mixed Fractions. If the fraction part of the result is improper,
+     make it Mixed Fractions and it's whole num will be added to the result's whole num.
+     Returns Mixed Fractions*/
+    public MixedFraction subtract (MixedFraction other){
+        //compute for LCM of the two numbers
+        int lcm = computeLCM(getDenominator(), other.getDenominator());
+
+        //this subtracts the whole number in the fractions
+        int wholeDiff= whole - other.whole;
+
+        //performs the steps in subtracting the fractions
+        int diffNum = (((lcm/getDenominator())* getNumerator()) - ((lcm/other.getDenominator())*other.getNumerator()));
+
+        //code for the improper fractions
+        int result = 0;
+
+        if (diffNum>lcm){
+            result = (diffNum % lcm);
+            int extra = (diffNum - result)/lcm; //the quotient will subtract the sum of the whole numbers
+             wholeDiff += extra;
+        }else                                  //Otherwise, the old diffNum will be used
+            result = diffNum;
+
+        //reduces fraction part of the MixedFraction
+        Fraction reduced = new Fraction(result, lcm);
+        Fraction answer = reduced.reduceFraction();
+
+        //create an object for the resulting MixedFraction
+        MixedFraction ans = new MixedFraction(wholeDiff, Math.abs(answer.getNumerator()), answer.getDenominator());
+        return ans;
+    }// end of method
 
     /**This method overrides the toString method from Fraction class.*/
     public String toString(){
