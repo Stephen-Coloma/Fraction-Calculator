@@ -84,7 +84,7 @@ public class MixedFraction extends Fraction {
 
         //create an object for the resulting MixedFraction
         MixedFraction ans = new MixedFraction(wholeNumSum, answer.getNumerator(), answer.getDenominator());
-        return ans;
+        return ans.reduceFraction();
     }
     //This part is edited by JERWIN RAMOS, on March 9, 2023
     /**This method Subtracts Mixed Fractions. If the fraction part of the result is improper,
@@ -116,8 +116,47 @@ public class MixedFraction extends Fraction {
 
         //create an object for the resulting MixedFraction
         MixedFraction ans = new MixedFraction(wholeDiff, Math.abs(answer.getNumerator()), answer.getDenominator());
-        return ans;
+        return ans.reduceFraction();
     }// end of method
+
+
+    //This part is edited by SANCHIE EARL GUZMAN, on March 9, 2023
+    /**This method Multiplies Mixed Fractions. First, convert mixed fractions to improper faction.
+     If the fraction part of the result is improper,
+     make it Mixed Fractions and its quotient will be the whole number.
+     Returns Mixed Fractions*/
+    public MixedFraction multiplyBy (MixedFraction other){
+
+        Fraction first = this.toImproperFraction();
+        Fraction second = other.toImproperFraction();
+        int numAns = first.getNumerator()* second.getNumerator();
+        int denAns = first.getDenominator()* second.getDenominator();
+        int wholeAns = 0;
+        int numerator = 0;
+
+        //this converts an improper fraction into a mixed fraction
+        if (numAns>denAns){
+             wholeAns = numAns / denAns;
+             numerator = numAns % denAns;
+        }
+        else
+            numerator = numAns;
+
+        //create an object for the resulting MixedFraction
+        MixedFraction answer = new MixedFraction(wholeAns,numerator, denAns);
+
+        return answer.reduceFraction();
+    }
+
+    /**This method converts mixed fractions to improper fractions*/
+    private Fraction toImproperFraction(){
+
+        int numerator = ((this.getWhole()*this.getDenominator())+this.getNumerator());
+        int denominator = (this.getDenominator());
+        Fraction answer = new Fraction(numerator, denominator);
+
+        return answer;
+    }
 
     /**This method overrides the toString method from Fraction class.*/
     public String toString(){
@@ -125,5 +164,15 @@ public class MixedFraction extends Fraction {
             return super.toString();
         }else
             return whole + " " + getNumerator() + "/" + getDenominator();
+    }
+
+    /**This method reduce fractions and returns the lowest form of the fraction*/
+    public MixedFraction reduceFraction (){
+        int gcd = computeGCD(getNumerator(), getDenominator());
+        int numeratorLT = getNumerator()/gcd;
+        int denominatorLT = getDenominator()/gcd;
+
+        MixedFraction fraction = new MixedFraction(whole, numeratorLT, denominatorLT);
+        return fraction;
     }
 }
