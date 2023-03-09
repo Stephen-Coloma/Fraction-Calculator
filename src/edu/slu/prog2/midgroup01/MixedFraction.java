@@ -49,4 +49,49 @@ public class MixedFraction extends Fraction {
         Fraction result = new Fraction(getNumerator(), getDenominator());
         return result;
     }
+
+    //This part is edited by STEPHEN COLOMA, on March 9, 2023
+    /**This method adds up Mixed Fractions. If the fraction part of the result is improper,
+     make it Mixed Fractions and it's whole num will be added to the result's whole num.
+     Returns Mixed Fractions*/
+    public MixedFraction add (MixedFraction other){
+        //compute for LCD a.k.a LCM of the two numbers
+        int lcm = computeLCM(getDenominator(), other.getDenominator());
+
+        //this adds the whole number in the fractions
+        int wholeNumSum = whole + other.whole;
+
+        //this code performs the typical steps in adding fractions
+        int sumForNumerator = (((lcm/getDenominator())* getNumerator())
+                + ((lcm/other.getDenominator())*other.getNumerator()));
+
+        //code for improper fractions
+        int newSumForNumerator = 0;
+
+        if (sumForNumerator>lcm){
+            //the remainder becomes the new numerator
+            newSumForNumerator = (sumForNumerator % lcm);
+
+            //the quotient will add up to the sum of the whole numbers
+            int extra = (sumForNumerator - newSumForNumerator)/lcm;
+            wholeNumSum += extra;
+        }else //Otherwise, the old sumForNumerator will be used
+            newSumForNumerator = sumForNumerator;
+
+        //reduce the fraction part of the mixed Fraction if ever
+        Fraction sample = new Fraction(newSumForNumerator, lcm);
+        Fraction answer = sample.reduceFraction();
+
+        //create an object for the resulting MixedFraction
+        MixedFraction ans = new MixedFraction(wholeNumSum, answer.getNumerator(), answer.getDenominator());
+        return ans;
+    }
+
+    /**This method overrides the toString method from Fraction class.*/
+    public String toString(){
+        if (whole == 0){
+            return super.toString();
+        }else
+            return whole + " " + getNumerator() + "/" + getDenominator();
+    }
 }
