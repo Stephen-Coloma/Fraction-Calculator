@@ -38,4 +38,15 @@ public class MixedFraction extends Fraction {
 
     }
 
+    //This part is edited by REY DANIEL ROQUE, on March 9, 2023
+    /** this method gets the value of the whole number part of the mixed fraction*/
+    public int getWhole(){
+        return whole;
+    }
+
+    /** this method gets the value of the numerator and denominator which returns it as a fraction*/
+    public Fraction getFractionPart(){
+        Fraction result = new Fraction(getNumerator(), getDenominator());
+        return result;
+    }
 }
