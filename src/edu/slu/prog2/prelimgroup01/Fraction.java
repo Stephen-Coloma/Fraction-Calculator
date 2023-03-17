@@ -1,6 +1,8 @@
 package edu.slu.prog2.prelimgroup01;
 
-public class Fraction {
+import edu.slu.prog2.midgroup01.Arithmetics;
+
+public class Fraction implements Arithmetics {
     /**This method was reused from the previous prelim project*/
     private int numerator;
     private int denominator;
