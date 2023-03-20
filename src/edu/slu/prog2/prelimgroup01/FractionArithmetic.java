@@ -65,6 +65,12 @@ public class FractionArithmetic extends JFrame{
         txt1 = new JTextField();
         txt2 = new JTextField();
         txt3 = new JTextField();
+        txt1.setBackground(new Color(68,69,73,255));
+        txt2.setBackground(new Color(68,69,73,255));
+        txt3.setBackground(new Color(68,69,73,255));
+        txt1.setBorder(null);
+        txt2.setBorder(null);
+        txt3.setBorder(null);
 
         //instantiation of buttons with their action listeners
         btn0 = new JButton(new ImageIcon("src/images/1.png"));
@@ -258,12 +264,12 @@ public class FractionArithmetic extends JFrame{
         txt2.setEditable(false);
         txt3.setEditable(false);
 
-        txt1.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
-        txt1.setForeground(new Color(255,255,255,220));
-        txt2.setFont(new java.awt.Font("Arial", Font.BOLD, 20));
-        txt2.setForeground(new Color(255,255,255,220));
+        txt1.setFont(new java.awt.Font("Arial", Font.BOLD, 17));
+        txt1.setForeground(new Color(255,255,255,215));
+        txt2.setFont(new java.awt.Font("Arial", Font.BOLD, 22));
+        txt2.setForeground(new Color(255,255,255,215));
         txt3.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
-        txt3.setForeground(new Color(255,255,255,220));
+        txt3.setForeground(new Color(255,255,255,215));
 
         txt2.setText("");
         txt2.setHorizontalAlignment(JTextField.CENTER);
@@ -273,11 +279,11 @@ public class FractionArithmetic extends JFrame{
 
         //label size and color
         lbl1.setFont(new java.awt.Font("Arial", Font.BOLD,15));
-        lbl1.setForeground(new Color(255,255,255,220));
-        lbl2.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
-        lbl2.setForeground(new Color(255,255,255,220));
+        lbl1.setForeground(new Color(255,255,255,215));
+        lbl2.setFont(new java.awt.Font("Arial", Font.BOLD, 18));
+        lbl2.setForeground(new Color(255,255,255,215));
         lbl3.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
-        lbl3.setForeground(new Color(255,255,255,220));
+        lbl3.setForeground(new Color(255,255,255,215));
 
         //panel color
         panelMain.setBackground(new Color(36, 36, 40,255));
@@ -285,11 +291,6 @@ public class FractionArithmetic extends JFrame{
         panelOutput.setBackground(new Color(36, 36, 40,255));
         panelResult.setBackground(new Color(36, 36, 40,255));
         panelResultLabel.setBackground(new Color(36, 36, 40,255));
-
-        //textfield color
-        txt1.setBackground(new Color(36, 36, 40,255));
-        txt2.setBackground(new Color(36, 36, 40,255));
-        txt3.setBackground(new Color(36, 36, 40,255));
 
         //setting the view when the constructor is running
         setContentPane(panelMain);
@@ -730,7 +731,7 @@ public class FractionArithmetic extends JFrame{
             btnEquals.setBackground(new Color(237, 237, 237,255));
             btnSlash.setBackground(new Color(26, 143, 252,255));
             btnSpace.setBackground(new Color(26, 143, 252,255));
-            btnBackspace.setBackground(new Color(147, 147, 148, 255));
+            btnBackspace.setBackground(new Color(94, 94, 96,255));
         }
     }
 
