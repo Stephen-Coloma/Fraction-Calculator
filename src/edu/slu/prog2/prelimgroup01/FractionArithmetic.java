@@ -294,7 +294,8 @@ public class FractionArithmetic extends JFrame{
 
         //setting the view when the constructor is running
         setContentPane(panelMain);
-        setTitle("Calculator");
+        setTitle("Fraction Arithmetics");
+        setIconImage(new ImageIcon("src/images/calculator.png").getImage());
         setSize(320,520);
         setVisible(true);
         panelMain.setVisible(true);
