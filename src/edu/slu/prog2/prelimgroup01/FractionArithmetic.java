@@ -7,13 +7,11 @@ package edu.slu.prog2.prelimgroup01;
 import edu.slu.prog2.midgroup01.MixedFraction;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
 public class FractionArithmetic extends JFrame{
-    private MixedFraction operand1;
-    private MixedFraction operand2;
-    
     //Panel Components
     private JPanel panelMain, panelOutput, panelInput,panelResult, panelResultLabel;
 
@@ -51,18 +49,17 @@ public class FractionArithmetic extends JFrame{
     private BackspaceButtonHandler backspaceH;
     private ClearButtonHandler clearH;
     private ExitButtonHandler exitH;
-
-    private static final int WIDTH = 400;
-    private static final int HEIGHT = 300;
+    private MixedFraction operand1;
+    private MixedFraction operand2;
     private String operator;
     private char hOperator;
 
     //constructor of the object
     public FractionArithmetic(){
         //instantiation of labels
-        lbl1 = new JLabel("Fraction or Mixed Fraction", SwingConstants.LEFT);
-        lbl2 = new JLabel("Preview", SwingConstants.LEFT);
-        lbl3 = new JLabel("Results",SwingConstants.LEFT);
+        lbl1 = new JLabel("e.g 1/2 or 3 4/7", SwingConstants.LEFT);
+        lbl2 = new JLabel("Preview:", SwingConstants.LEFT);
+        lbl3 = new JLabel("Results:",SwingConstants.LEFT);
 
         //instantiation of textFields
         txt1 = new JTextField();
@@ -70,93 +67,152 @@ public class FractionArithmetic extends JFrame{
         txt3 = new JTextField();
 
         //instantiation of buttons with their action listeners
-        btn0 = new JButton("0");
+        btn0 = new JButton(new ImageIcon("src/images/1.png"));
+        btn0.setBorderPainted(false);
+        btn0.setBackground(new Color(68,69,73,255));
         Handler0 = new ButtonHandler0();
         btn0.addActionListener(Handler0);
+        btn0.setFocusable(false);
 
-        btn1 = new JButton("1");
+        btn1 = new JButton(new ImageIcon("src/images/2.png"));
+        btn1.setBorderPainted(false);
+        btn1.setBackground(new Color(68,69,73,255));
         Handler1 = new ButtonHandler1();
         btn1.addActionListener(Handler1);
+        btn1.setFocusable(false);
 
-        btn2 = new JButton("2");
+        btn2 = new JButton(new ImageIcon("src/images/3.png"));
+        btn2.setBorderPainted(false);
+        btn2.setBackground(new Color(68,69,73,255));
         Handler2 = new ButtonHandler2();
         btn2.addActionListener(Handler2);
+        btn2.setFocusable(false);
 
-        btn3 = new JButton("3");
+        btn3 = new JButton(new ImageIcon("src/images/4.png"));
+        btn3.setBorderPainted(false);
+        btn3.setBackground(new Color(68,69,73,255));
         Handler3 = new ButtonHandler3();
         btn3.addActionListener(Handler3);
+        btn3.setFocusable(false);
 
-        btn4 = new JButton("4");
+        btn4 = new JButton(new ImageIcon("src/images/5.png"));
+        btn4.setBorderPainted(false);
+        btn4.setBackground(new Color(68,69,73,255));
         Handler4 = new ButtonHandler4();
         btn4.addActionListener(Handler4);
+        btn4.setFocusable(false);
 
-        btn5 = new JButton("5");
+        btn5 = new JButton(new ImageIcon("src/images/6.png"));
+        btn5.setBorderPainted(false);
+        btn5.setBackground(new Color(68,69,73,255));
         Handler5 = new ButtonHandler5();
         btn5.addActionListener(Handler5);
+        btn5.setFocusable(false);
 
-        btn6 = new JButton("6");
+        btn6 = new JButton(new ImageIcon("src/images/7.png"));
+        btn6.setBorderPainted(false);
+        btn6.setBackground(new Color(68,69,73,255));
         Handler6 = new ButtonHandler6();
         btn6.addActionListener(Handler6);
+        btn6.setFocusable(false);
 
-        btn7 = new JButton("7");
+        btn7 = new JButton(new ImageIcon("src/images/8.png"));
+        btn7.setBorderPainted(false);
+        btn7.setBackground(new Color(68,69,73,255));
         Handler7 = new ButtonHandler7();
         btn7.addActionListener(Handler7);
+        btn7.setFocusable(false);
 
-        btn8 = new JButton("8");
+        btn8 = new JButton(new ImageIcon("src/images/9.png"));
+        btn8.setBorderPainted(false);
+        btn8.setBackground(new Color(68,69,73,255));
         Handler8 = new ButtonHandler8();
         btn8.addActionListener(Handler8);
+        btn8.setFocusable(false);
 
-        btn9 = new JButton("9");
+        btn9 = new JButton(new ImageIcon("src/images/10.png"));
+        btn9.setBorderPainted(false);
+        btn9.setBackground(new Color(68,69,73,255));
         Handler9 = new ButtonHandler9();
         btn9.addActionListener(Handler9);
+        btn9.setFocusable(false);
 
-        btnAdd = new JButton("Add");
+        btnAdd = new JButton(new ImageIcon("src/images/add.png"));
+        btnAdd.setBorderPainted(false);
+        btnAdd.setBackground(new Color(26, 143, 252,255));
         addH = new AddButtonHandler();
         btnAdd.addActionListener(addH);
+        btnAdd.setFocusable(false);
 
-        btnSub = new JButton("Subtract");
+        btnSub = new JButton(new ImageIcon("src/images/sub.png"));
+        btnSub.setBorderPainted(false);
+        btnSub.setBackground(new Color(26, 143, 252,255));
         subH = new SubButtonHandler();
         btnSub.addActionListener(subH);
+        btnSub.setFocusable(false);
 
-        btnMul = new JButton("Multiply");
+        btnMul = new JButton(new ImageIcon("src/images/mul.png"));
+        btnMul.setBorderPainted(false);
+        btnMul.setBackground(new Color(26, 143, 252,255));
         mulH = new MulButtonHandler();
         btnMul.addActionListener(mulH);
+        btnMul.setFocusable(false);
 
-        btnDiv = new JButton("Divide");
+        btnDiv = new JButton(new ImageIcon("src/images/div.png"));
+        btnDiv.setBorderPainted(false);
+        btnDiv.setBackground(new Color(26, 143, 252,255));
         divH = new DivButtonHandler();
         btnDiv.addActionListener(divH);
+        btnDiv.setFocusable(false);
 
-        btnEquals = new JButton("Equals");
+        btnEquals = new JButton(new ImageIcon("src/images/equals.png"));
+        btnEquals.setBorderPainted(false);
         equalsH = new EqualsButtonHandler();
         btnEquals.addActionListener(equalsH);
+        btnEquals.setFocusable(false);
 
-        btnSlash = new JButton("Slash");
+        btnSlash = new JButton(new ImageIcon("src/images/slash.png"));
+        btnSlash.setBorderPainted(false);
+        btnSlash.setBackground(new Color(26, 143, 252,255));
         slashH = new SlashButtonHandler();
         btnSlash.addActionListener(slashH);
+        btnSlash.setFocusable(false);
 
-        btnSpace = new JButton("Space");
+        btnSpace = new JButton(new ImageIcon("src/images/space.png"));
+        btnSpace.setBorderPainted(false);
+        btnSpace.setBackground(new Color(26, 143, 252,255));
         spaceH = new SpaceButtonHandler();
         btnSpace.addActionListener(spaceH);
+        btnSpace.setFocusable(false);
 
-        btnBackspace = new JButton("Backspace");
+        btnBackspace = new JButton(new ImageIcon("src/images/backspace.png"));
+        btnBackspace.setBorderPainted(false);
+        btnBackspace.setBackground(new Color(94, 94, 96,255));
         backspaceH = new BackspaceButtonHandler();
         btnBackspace.addActionListener(backspaceH);
+        btnBackspace.setFocusable(false);
 
-        btnClear = new JButton("Clear");
+        btnClear = new JButton(new ImageIcon("src/images/clear.png"));
+        btnClear.setBorderPainted(false);
+        btnClear.setBackground(new Color(94, 94, 96,255));
         clearH = new ClearButtonHandler();
         btnClear.addActionListener(clearH);
+        btnClear.setFocusable(false);
 
-        btnExit = new JButton("Exit");
+        btnExit = new JButton(new ImageIcon("src/images/exit.png"));
+        btnExit.setBorderPainted(false);
+        btnExit.setBackground(new Color(255, 79, 49,255));
         exitH = new ExitButtonHandler();
         btnExit.addActionListener(exitH);
+        btnExit.setFocusable(false);
 
         //instantiation and population of panelResultLabel
-        panelResultLabel = new JPanel(new GridLayout(0, 2));
+        panelResultLabel = new JPanel(new GridLayout(0, 2,20,0));
         panelResultLabel.add(lbl3);
         panelResultLabel.add(lbl1);
 
         //instantiation and population of panelResult
-        panelResult = new JPanel(new GridLayout(0,2));
+        panelResult = new JPanel(new GridLayout(0,2,20,0));
         panelResult.add(txt3);
         panelResult.add(txt1);
 
@@ -167,9 +223,8 @@ public class FractionArithmetic extends JFrame{
         panelOutput.add(panelResultLabel);
         panelOutput.add(panelResult);
 
-
         //instantiation and population of panelOutput
-        panelInput = new JPanel(new GridLayout(5, 4,1,1));
+        panelInput = new JPanel(new GridLayout(5, 4,5,5));
         panelInput.add(btnExit);
         panelInput.add(btnClear);
         panelInput.add(btnBackspace);
@@ -192,7 +247,9 @@ public class FractionArithmetic extends JFrame{
         panelInput.add(btnEquals);
 
         //instantiation and population of panelMain
-        panelMain = new JPanel(new GridLayout(2,0));
+        panelMain = new JPanel(new GridLayout(2,0,0,10));
+        Border padding = BorderFactory.createEmptyBorder(10, 10, 10, 10);
+        panelMain.setBorder(padding);
         panelMain.add(panelOutput);
         panelMain.add(panelInput);
 
@@ -201,25 +258,43 @@ public class FractionArithmetic extends JFrame{
         txt2.setEditable(false);
         txt3.setEditable(false);
 
-
         txt1.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
-        txt1.setForeground(Color.black);
-        txt2.setFont(new java.awt.Font("Arial", Font.BOLD, 17));
-        txt2.setForeground(Color.black);
+        txt1.setForeground(new Color(255,255,255,220));
+        txt2.setFont(new java.awt.Font("Arial", Font.BOLD, 20));
+        txt2.setForeground(new Color(255,255,255,220));
         txt3.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
-        txt3.setForeground(Color.black);
+        txt3.setForeground(new Color(255,255,255,220));
 
-        txt1.setText("");
         txt2.setText("");
         txt2.setHorizontalAlignment(JTextField.CENTER);
         txt1.setHorizontalAlignment(JTextField.RIGHT);
         txt3.setHorizontalAlignment(JTextField.CENTER);
         btnEquals.setEnabled(false);
 
+        //label size and color
+        lbl1.setFont(new java.awt.Font("Arial", Font.BOLD,15));
+        lbl1.setForeground(new Color(255,255,255,220));
+        lbl2.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
+        lbl2.setForeground(new Color(255,255,255,220));
+        lbl3.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
+        lbl3.setForeground(new Color(255,255,255,220));
+
+        //panel color
+        panelMain.setBackground(new Color(36, 36, 40,255));
+        panelInput.setBackground(new Color(36, 36, 40,255));
+        panelOutput.setBackground(new Color(36, 36, 40,255));
+        panelResult.setBackground(new Color(36, 36, 40,255));
+        panelResultLabel.setBackground(new Color(36, 36, 40,255));
+
+        //textfield color
+        txt1.setBackground(new Color(36, 36, 40,255));
+        txt2.setBackground(new Color(36, 36, 40,255));
+        txt3.setBackground(new Color(36, 36, 40,255));
+
         //setting the view when the constructor is running
         setContentPane(panelMain);
         setTitle("Calculator");
-        setSize(420,420);
+        setSize(320,520);
         setVisible(true);
         panelMain.setVisible(true);
         setLocationRelativeTo(null);
@@ -231,7 +306,6 @@ public class FractionArithmetic extends JFrame{
             txt1.setText(txt1.getText() + "0");
         }
     }
-
 
     private class ButtonHandler1 implements ActionListener{
         public void actionPerformed(ActionEvent e){
@@ -287,7 +361,6 @@ public class FractionArithmetic extends JFrame{
         }
     }
 
-
     private class AddButtonHandler implements ActionListener{
         public void actionPerformed(ActionEvent e){
             operator = " + "; // this will be used in the preview
@@ -306,6 +379,7 @@ public class FractionArithmetic extends JFrame{
 
                 txt2.setText(operand1.toString() + operator);
                 btnEquals.setEnabled(true);
+                btnEquals.setBackground(new Color(57, 160, 255,255));
             }catch (NumberFormatException ex){ //this catch will be used for inputting Mixed Fractions
                 try {
                     input = txt1.getText();
@@ -321,6 +395,7 @@ public class FractionArithmetic extends JFrame{
 
                     txt2.setText(operand1.toString() + operator);
                     btnEquals.setEnabled(true);
+                    btnEquals.setBackground(new Color(57, 160, 255,255));
                 }catch (Exception exe){
                     codeForSettingException();
                 }
@@ -330,6 +405,7 @@ public class FractionArithmetic extends JFrame{
 
             txt1.setText("");
             btnAdd.setEnabled(false);
+            btnAdd.setBackground(new Color(237, 237, 237,255));
         }
     }
 
@@ -351,6 +427,7 @@ public class FractionArithmetic extends JFrame{
 
                 txt2.setText(operand1.toString() + operator);
                 btnEquals.setEnabled(true);
+                btnEquals.setBackground(new Color(57, 160, 255,255));
             }catch (NumberFormatException ex){ //this catch will be used for inputting Mixed Fractions
                 try {
                     input = txt1.getText();
@@ -366,6 +443,7 @@ public class FractionArithmetic extends JFrame{
 
                     txt2.setText(operand1.toString() + operator);
                     btnEquals.setEnabled(true);
+                    btnEquals.setBackground(new Color(57, 160, 255,255));
                 }catch (Exception exe){
                     codeForSettingException();
                 }
@@ -375,6 +453,7 @@ public class FractionArithmetic extends JFrame{
 
             txt1.setText("");
             btnSub.setEnabled(false);
+            btnSub.setBackground(new Color(237, 237, 237,255));
         }
     }
 
@@ -396,6 +475,7 @@ public class FractionArithmetic extends JFrame{
 
                 txt2.setText(operand1.toString() + operator);
                 btnEquals.setEnabled(true);
+                btnEquals.setBackground(new Color(57, 160, 255,255));
             }catch (NumberFormatException ex){ //this catch will be used for inputting Mixed Fractions
                 try {
                     input = txt1.getText();
@@ -411,6 +491,7 @@ public class FractionArithmetic extends JFrame{
 
                     txt2.setText(operand1.toString() + operator);
                     btnEquals.setEnabled(true);
+                    btnEquals.setBackground(new Color(57, 160, 255,255));
                 }catch (Exception exe){
                     codeForSettingException();
                 }
@@ -420,6 +501,7 @@ public class FractionArithmetic extends JFrame{
 
             txt1.setText("");
             btnMul.setEnabled(false);
+            btnMul.setBackground(new Color(237, 237, 237,255));
         }
     }
 
@@ -441,6 +523,7 @@ public class FractionArithmetic extends JFrame{
 
                 txt2.setText(operand1.toString() + operator);
                 btnEquals.setEnabled(true);
+                btnEquals.setBackground(new Color(57, 160, 255,255));
             }catch (NumberFormatException ex){ //this catch will be used for inputting Mixed Fractions
                 try {
                     input = txt1.getText();
@@ -456,6 +539,7 @@ public class FractionArithmetic extends JFrame{
 
                     txt2.setText(operand1.toString() + operator);
                     btnEquals.setEnabled(true);
+                    btnEquals.setBackground(new Color(57, 160, 255,255));
                 }catch (Exception exe){
                     codeForSettingException();
                 }
@@ -465,6 +549,7 @@ public class FractionArithmetic extends JFrame{
 
             txt1.setText("");
             btnDiv.setEnabled(false);
+            btnDiv.setBackground(new Color(237, 237, 237,255));
         }
     }
 
@@ -485,6 +570,7 @@ public class FractionArithmetic extends JFrame{
 
                 txt2.setText(txt2.getText() + operand2.toString());
                 btnEquals.setEnabled(true);
+                btnEquals.setBackground(new Color(237, 237, 237,255));
             }catch (NumberFormatException ex){ //this catch will be used for inputting Mixed Fractions
                 try {
                     input = txt1.getText();
@@ -500,19 +586,26 @@ public class FractionArithmetic extends JFrame{
 
                     txt2.setText(txt2.getText() + operand2.toString());
                     btnEquals.setEnabled(true);
+                    btnEquals.setBackground(new Color(237, 237, 237,255));
                 }catch (Exception exe){
                     codeForSettingException();
 
                     btnEquals.setEnabled(false);
+                    btnEquals.setBackground(new Color(237, 237, 237,255));
                     valid = false;
                 }
             }catch (Exception ex){ //this catch will be used for erroneous input
                 codeForSettingException();
 
                 btnEquals.setEnabled(false);
+                btnEquals.setBackground(new Color(237, 237, 237,255));
                 valid = false;
             }
 
+            btnAdd.setBackground(new Color(26, 143, 252,255));
+            btnSub.setBackground(new Color(26, 143, 252,255));
+            btnMul.setBackground(new Color(26, 143, 252,255));
+            btnDiv.setBackground(new Color(26, 143, 252,255));
             txt1.setText(""); //resets the content of textField1
 
             //This code performs arithmetics based on the character code
@@ -548,7 +641,8 @@ public class FractionArithmetic extends JFrame{
 
     /**This method will hold the code that will be used for exceptions to prevent repeating of codes*/
     private void codeForSettingException(){
-        txt2.setText("ENTER A FRACTION OR MIXED FRACTION");
+        txt2.setFont(new java.awt.Font("Arial", Font.BOLD, 15));
+        txt2.setText("INVALID FORMAT");
         txt3.setText("");
 
         btn0.setEnabled(false);
@@ -568,6 +662,15 @@ public class FractionArithmetic extends JFrame{
         btnSlash.setEnabled(false);
         btnSpace.setEnabled(false);
         btnBackspace.setEnabled(false);
+
+        btnAdd.setBackground(new Color(237, 237, 237,255));
+        btnSub.setBackground(new Color(237, 237, 237,255));
+        btnMul.setBackground(new Color(237, 237, 237,255));
+        btnDiv.setBackground(new Color(237, 237, 237,255));
+        btnEquals.setBackground(new Color(237, 237, 237,255));
+        btnSlash.setBackground(new Color(237, 237, 237,255));
+        btnSpace.setBackground(new Color(237, 237, 237,255));
+        btnBackspace.setBackground(new Color(237, 237, 237,255));
     }
 
     private class SlashButtonHandler implements ActionListener{
@@ -617,6 +720,17 @@ public class FractionArithmetic extends JFrame{
             btnSlash.setEnabled(true);
             btnSpace.setEnabled(true);
             btnBackspace.setEnabled(true);
+
+            txt2.setFont(new java.awt.Font("Arial", Font.BOLD, 20));
+
+            btnAdd.setBackground(new Color(26, 143, 252,255));
+            btnSub.setBackground(new Color(26, 143, 252,255));
+            btnMul.setBackground(new Color(26, 143, 252,255));
+            btnDiv.setBackground(new Color(26, 143, 252,255));
+            btnEquals.setBackground(new Color(237, 237, 237,255));
+            btnSlash.setBackground(new Color(26, 143, 252,255));
+            btnSpace.setBackground(new Color(26, 143, 252,255));
+            btnBackspace.setBackground(new Color(147, 147, 148, 255));
         }
     }
 
@@ -625,11 +739,6 @@ public class FractionArithmetic extends JFrame{
             System.exit(0);
         }
     }
-
-
-
-
-
 
     public static void main(String[] args) {
         FractionArithmetic calculator = new FractionArithmetic();
