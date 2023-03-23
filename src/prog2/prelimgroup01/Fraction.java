@@ -31,22 +31,26 @@ public class Fraction implements Arithmetics {
         this.denominator = denominator;
     }
 
-    /**This method sets the numerator of the object*/
+    /**This method sets the numerator of the object
+     * @param numerator this will be set as the numerator of the fraction*/
     public void setNumerator(int numerator) {
         this.numerator = numerator;
     }
 
-    /**This method sets the numerator of the object*/
+    /**This method sets the numerator of the object
+     * @param denominator this will set the denominator of the fraction*/
     public void setDenominator(int denominator) {
         this.denominator = denominator;
     }
 
-    /**This method gets the denominator of the object returning it as an int*/
+    /**This method gets the denominator of the object returning it as an int
+     * @return  this returns the numerator of the object*/
     public int getNumerator(){
         return numerator;
     }
 
-    /**This method gets the denominator of the object and returning it as an int*/
+    /**This method gets the denominator of the object and returning it as an int
+     * @ return this returns the denominator of the object*/
     public int getDenominator(){
         return denominator;
     }
@@ -61,7 +65,10 @@ public class Fraction implements Arithmetics {
         return (double) ans.numerator/ans.denominator;
     }
 
-    /**This method is used to compute for GCD.*/
+    /**This method is used to compute for GCD.
+     * @param a this will serve as the 1st denominator for the computation of the GCD
+     * @param b this will serve as the 2nd denominator for the computation of the GCD */
+
     protected static int computeGCD(int a, int b){
         if (a ==0)
             return b;
@@ -71,7 +78,9 @@ public class Fraction implements Arithmetics {
     }
 
     /**This method is used to compute the LCD of a fraction.
-     * This is useful in adding, subtracting fractions and comparing fractions*/
+     * This is useful in adding, subtracting fractions and comparing fractions
+     * @param a this will serve as the 1st denominator for the computation of the LCM
+     * @param b this will serve as the 2nd denominator for the computation of the LCM */
     protected static int computeLCM(int a, int b){
         int lcm = (a*b)/computeGCD(a,b);
         return lcm;
