@@ -86,8 +86,10 @@ public class Fraction implements Arithmetics {
         return lcm;
     }
 
-    /**This method adds fractions. Its parameters contain two fraction with data type of Fraction
-     returns the string format of the result*/
+    /**This method adds fraction objects. Uses the computeLCM method.
+     * @param other this fraction object accesses the value of the 2nd fraction that will be added to the first
+     * fraction
+     * @return returns the sum of the two fractions in reduced form using reduceFraction method */
     public Fraction add (Fraction other){
         //compute for LCD a.k.a LCM of the two numbers
         int lcm = computeLCM(denominator, other.denominator);
@@ -101,8 +103,10 @@ public class Fraction implements Arithmetics {
         return ans.reduceFraction();
     }
 
-    /**This method subtracts fractions. Its parameters contain two fraction with data type of Fraction
-     returns the string format of the result*/
+    /**This method subtracts fraction objects. Uses the computeLCM method.
+     * @param other this fraction object accesses the value of the 2nd fraction that will be subtracted from the first
+     * fraction
+     * @return returns the difference of the two fractions in reduced form using reduceFraction method */
     public Fraction subtract (Fraction other){
         //compute for LCD a.k.a LCM
         int lcm = computeLCM(denominator, other.denominator);
@@ -117,8 +121,10 @@ public class Fraction implements Arithmetics {
         return ans.reduceFraction();
     }
 
-    /**This method multiplies fractions. Its parameters contain two fraction with data type of Fraction
-     returns the string format of the result*/
+    /**This method multiplies fraction objects.
+     * @param other this fraction object accesses the value of the 2nd fraction that will be multiplied by the first
+     * fraction
+     * @return returns the product of the two fractions in reduced form using reduceFraction method */
     public Fraction multiplyBy (Fraction other){
         int numerator =  this.numerator* other.numerator;
         int denominator = this.denominator* other.denominator;
@@ -127,8 +133,10 @@ public class Fraction implements Arithmetics {
         return ans.reduceFraction();
     }
 
-    /**This method divides fractions. Its parameters contain two fraction with data type of Fraction
-     returns the string format of the result*/
+    /**This method divides fraction objects.
+     * @param other this fraction object accesses the value of the 2nd fraction that will be divided from the first
+     * fraction
+     * @return returns the quotient of the two fractions in reduced form using reduceFraction method */
     public Fraction divideBy (Fraction other){
         int numerator = this.numerator* other.denominator;
         int denominator = this.denominator * other.numerator;
