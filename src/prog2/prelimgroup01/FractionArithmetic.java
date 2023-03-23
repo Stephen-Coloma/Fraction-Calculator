@@ -1,5 +1,12 @@
 /**
  GROUP MEMBERS: BALANG, BROMEO, COLOMA, GUZMAN, RAMOS, ROQUE
+
+ Project Title: Project on MixedFraction Arithmetic
+
+ Problem Description:
+ Create a program that facilitates addition, subtraction, multiplication and division of mixed
+ numbers (similar with the first activity) but this time, all of the inputs/outputs may involve fractions, mixed
+ fractions or combination.
  */
 
 package prog2.prelimgroup01;
