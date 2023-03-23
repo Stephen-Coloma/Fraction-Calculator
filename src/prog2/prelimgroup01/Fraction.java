@@ -7,16 +7,25 @@ public class Fraction implements Arithmetics {
     private int numerator;
     private int denominator;
 
+    /**
+     * This is a default constructor to be used in creating a Fraction Object*/
     public Fraction(){
         numerator = 0;
         denominator =1;
     }
 
+    /**
+     * This is a parametrized Constructor in creating a Fraction Object
+     * @param wholeNumVal this parameter is used if the fraction has a denominator of 1*/
     public Fraction(int wholeNumVal){
         this.numerator = wholeNumVal;
         this.denominator = 1;
     }
 
+    /**
+     * This is a parametrized Constructor in creating a Fraction Object
+     * @param numerator this parameter will be the numerator of the Fraction
+     * @param denominator this parameter will be the denominator of the Fraction*/
     public Fraction(int numerator , int denominator){
         this.numerator = numerator;
         this.denominator = denominator;

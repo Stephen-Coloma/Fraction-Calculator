@@ -8,22 +8,39 @@ public class MixedFraction extends Fraction {
 
     //This part is edited by STEPHEN COLOMA, on March 9, 2023
     private int whole;
+    /**
+     * This is a default Constructor in creating a Mixed Fraction Object*/
     public MixedFraction(){
         super();
         whole = 0;
     }
 
+    /**
+     * This is a parameterized Constructor in creating a Mixed Fraction Object
+     * This constructor is called when passing a Fraction object
+     * @param whole this parameter will be the wholeNumber of the Mixed Fraction
+     * @param fraction this parameter will be set as the fraction part of the Mixed Fraction*/
     public MixedFraction(int whole, Fraction fraction){
         super(fraction.getNumerator(), fraction.getDenominator());
         this.whole=whole;
 
     }
 
+    /**
+     * This is a parameterized Constructor in creating a Mixed Fraction Object
+     * This constructor is called when passing a Fraction object
+     * @param whole this parameter will be the wholeNumber of the Mixed Fraction
+     * @param numerator this parameter will be set as the Numerator of the Mixed Fraction
+     * @param denominator this parameter will be set as the denominator of the Mixed Fraction */
     public MixedFraction(int whole, int numerator, int denominator){
         super(numerator,denominator);
         this.whole=whole;
     }
 
+    /**
+     * This is a parameterized Constructor in creating a Mixed Fraction Object
+     * This constructor is called when passing a Fraction object
+     * @param fraction this parameter will be the basis Fraction of the Mixed Fraction and the whole number is set as 0*/
     public MixedFraction(Fraction fraction){
         super(fraction.getNumerator(), fraction.getDenominator());
         this.whole = 0;
