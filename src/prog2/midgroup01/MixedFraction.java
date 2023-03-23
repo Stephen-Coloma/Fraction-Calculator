@@ -46,7 +46,7 @@ public class MixedFraction extends Fraction {
         this.whole = 0;
     }
     //This part is edited by EMMANUEL BROMEO, on March 9, 2023
-    /** this methods sets the whole number part of the mixed fraction */
+    /** this method sets the whole number part of the mixed fraction */
     public void setWholePart(int whole){
         this.whole = whole;
     }
@@ -71,8 +71,10 @@ public class MixedFraction extends Fraction {
 
     //This part is edited by STEPHEN COLOMA, on March 9, 2023
     /**This method adds up Mixed Fractions. If the fraction part of the result is improper,
-     make it Mixed Fractions and it's whole num will be added to the result's whole num.
-     Returns Mixed Fractions*/
+     make it Mixed Fractions, and it's whole num will be added to the result's whole num.
+     Returns Mixed Fractions
+     @param other this MixedFraction object represents the value of the second fraction that will be added to the first fraction
+     @return returns the sum of the two mixed fractions in reduced form using the reduceFraction method*/
     public MixedFraction add (MixedFraction other){
         //compute for LCD a.k.a LCM of the two numbers
         int lcm = computeLCM(getDenominator(), other.getDenominator());
@@ -107,8 +109,10 @@ public class MixedFraction extends Fraction {
     }
     //This part is edited by JERWIN RAMOS, on March 9, 2023
     /**This method Subtracts Mixed Fractions. If the fraction part of the result is improper,
-     make it Mixed Fractions and it's whole num will be added to the result's whole num.
-     Returns Mixed Fractions*/
+     make it Mixed Fractions, and it's whole num will be added to the result's whole num.
+     Returns Mixed Fractions
+     @param other this MixedFraction object represents the value of the second fraction that will be subtracted from to the first fraction
+     @return returns the difference of the two mixed fractions in reduced form using the reduceFraction method*/
     public MixedFraction subtract (MixedFraction other){
         Fraction first = this.toImproperFraction();
         Fraction second = other.toImproperFraction();
@@ -139,7 +143,9 @@ public class MixedFraction extends Fraction {
     /**This method Multiplies Mixed Fractions. First, convert mixed fractions to improper faction.
      If the fraction part of the result is improper,
      make it Mixed Fractions and its quotient will be the whole number.
-     Returns Mixed Fractions*/
+     Returns Mixed Fractions
+     @param other this MixedFraction object which represents the value of the second fraction that will be multiplied to the first fraction
+     @return returns the product of the two mixed fractions in reduced form using the reduceFraction method */
     public MixedFraction multiplyBy (MixedFraction other){
 
         Fraction first = this.toImproperFraction();
@@ -167,7 +173,9 @@ public class MixedFraction extends Fraction {
     /**This method Multiplies Mixed Fractions. First, convert mixed fractions to improper faction.
      If the fraction part of the result is improper,
      make it Mixed Fractions and its quotient will be the whole number.
-     Returns Mixed Fractions*/
+     Returns Mixed Fractions
+     @param other this MixedFraction object which represents the value of the second fraction that will be divided from the first fraction
+     @return returns the quotient of the two mixed fractions in reduced form using the reduceFraction method*/
     public MixedFraction divideBy (MixedFraction other){
 
         Fraction first = this.toImproperFraction();
