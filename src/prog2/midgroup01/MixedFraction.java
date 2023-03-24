@@ -119,9 +119,7 @@ public class MixedFraction extends Fraction {
 
         //compute for LCM of the two numbers
         int lcm = computeLCM(first.getDenominator(), second.getDenominator());
-        System.out.println(lcm);
         int diffNum = ((lcm/ first.getDenominator())* first.getNumerator()) - ((lcm/second.getDenominator())* second.getNumerator());
-        System.out.println(diffNum);
 
         int wholeNum = 0;
         int result;
